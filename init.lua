@@ -93,6 +93,10 @@ vim.g.maplocalleader = ','
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
+-- Set terminal to either bash or PS
+local terminal = require 'terminal'
+local detected_shell = terminal.setup()
+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
