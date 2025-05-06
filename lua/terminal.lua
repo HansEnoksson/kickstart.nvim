@@ -9,7 +9,7 @@ function M.setup()
 
   if is_windows then
     -- PowerShell configuration for Windows
-    vim.o.shell = 'powershell'
+    vim.o.shell = 'pwsh'
     vim.o.shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command'
     vim.o.shellquote = ''
     vim.o.shellxquote = ''
