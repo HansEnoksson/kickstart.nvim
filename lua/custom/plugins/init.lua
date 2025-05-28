@@ -3,9 +3,47 @@
 --
 -- See the kickstart.nvim README for more information
 return {
+  {
+    'seblyng/roslyn.nvim',
+    ft = 'cs',
+    opts = {
+      -- Plugin will automatically find the Mason-installed binary
+    },
+  },
+  -- Obsidian plugin
+  {
+    'epwalsh/obsidian.nvim',
+    version = '*', -- recommended, use latest release instead of latest commit
+    lazy = false,
+    ft = 'markdown',
+    dependencies = {
+      -- Required.
+      'nvim-lua/plenary.nvim',
+    },
+    opts = {
+      workspaces = {
+        {
+          name = 'work',
+          path = '~/Documents/Obsidian-Vault/',
+        },
+      },
+      ui = { enable = false },
+    },
+  },
+
+  -- Markview Previewer
+  {
+    'OXY2DEV/markview.nvim',
+    lazy = false,
+    dependencies = {
+      'saghen/blink.cmp',
+    },
+  },
+
   -- Oil file manager
   {
     'stevearc/oil.nvim',
+    lazy = false,
     event = 'VimEnter',
     cmd = { 'Oil' },
     config = function()
@@ -59,6 +97,23 @@ return {
   -- Vim-rooter equivalent
   {
     'airblade/vim-rooter',
+    config = function()
+      vim.g.rooter_patterns = {
+        '.git',
+        '.git/',
+        '_darcs/',
+        '.hg/',
+        '.bzr/',
+        '.svn/',
+        'Makefile',
+        'package.json',
+        '*.sln',
+        '*.csproj',
+        'global.json',
+        'Program.cs',
+        '*.md',
+      }
+    end,
   },
 
   {
