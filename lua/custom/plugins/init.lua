@@ -24,7 +24,10 @@ return {
       workspaces = {
         {
           name = 'work',
-          path = '~/Documents/Obsidian-Vault/',
+          -- Windows path
+          -- path = '~/Documents/Obsidian-Vault/',
+          -- Linux path
+          path = '~/Dokument/Obsidian-Vault/',
         },
       },
       ui = { enable = false },
